@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" MasterPageFile="Base.Master" Inherits="System.Web.Mvc.ViewMasterPage<dynamic>" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="H2Title" runat="server">
+    <asp:ContentPlaceHolder ID="H2Title" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="MainTable" runat="server">    
+    <table>
+	    <tr>            
+            <th>
+                <asp:ContentPlaceHolder ID="SearchName" runat="server" />
+            </th>
+            <th>
+                <asp:ContentPlaceHolder ID="AdditionalFilters" runat="server" />
+                <%: Html.TextBox("NomePesquisa", null, new { style = "width:500px" })%>
+                <%: Html.ValidationMessage("NomePesquisa", "*")%>
+                <input type="submit" value="Pesquisar" />
+            </th>
+        </tr>
+    </table>
+</asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="OtherTable" runat="server" >
+    <table>
+        <tr>
+            <th>                
+            </th>
+            <asp:ContentPlaceHolder ID="ColumnsTitle" runat="server" />
+        </tr>              
+        <asp:ContentPlaceHolder ID="ColumnsData" runat="server" />
+    </table>
+</asp:Content>

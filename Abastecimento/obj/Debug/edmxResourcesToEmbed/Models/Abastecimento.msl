@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AbastecimentoModelsStoreContainer" CdmEntityContainer="AbastecimentoEntities">
+    <EntitySetMapping Name="AbastecimentoPosto">
+      <EntityTypeMapping TypeName="Abastecimento.Models.AbastecimentoPosto">
+        <MappingFragment StoreEntitySet="AbastecimentoPosto">
+          <ScalarProperty Name="Id_AbastecimentoPosto" ColumnName="Id_AbastecimentoPosto" />
+          <ScalarProperty Name="Quantidade_Combustivel" ColumnName="Quantidade_Combustivel" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+          <ScalarProperty Name="Id_Posto" ColumnName="Id_Posto" />
+          <ScalarProperty Name="Id_Combustivel" ColumnName="Id_Combustivel" />
+          <ScalarProperty Name="Id_VeiculoMotorista" ColumnName="Id_VeiculoMotorista" />
+          <ScalarProperty Name="ValorUnitario" ColumnName="ValorUnitario" />
+          <ScalarProperty Name="Id_Motorista" ColumnName="Id_Motorista" />
+          <ScalarProperty Name="LeituraMedidor" ColumnName="LeituraMedidor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Combustivel">
+      <EntityTypeMapping TypeName="Abastecimento.Models.Combustivel">
+        <MappingFragment StoreEntitySet="Combustivel">
+          <ScalarProperty Name="Id_Combustivel" ColumnName="Id_Combustivel" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Concessionaria">
+      <EntityTypeMapping TypeName="Abastecimento.Models.Concessionaria">
+        <MappingFragment StoreEntitySet="Concessionaria">
+          <ScalarProperty Name="Id_Concessionaria" ColumnName="Id_Concessionaria" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModeloVeiculoCombustivel">
+      <EntityTypeMapping TypeName="Abastecimento.Models.ModeloVeiculoCombustivel">
+        <MappingFragment StoreEntitySet="ModeloVeiculoCombustivel">
+          <ScalarProperty Name="Id_ModeloVeiculoCombustivel" ColumnName="Id_ModeloVeiculoCombustivel" />
+          <ScalarProperty Name="Id_Combustivel" ColumnName="Id_Combustivel" />
+          <ScalarProperty Name="Id_VeiculoMotorista" ColumnName="Id_VeiculoMotorista" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Motorista">
+      <EntityTypeMapping TypeName="Abastecimento.Models.Motorista">
+        <MappingFragment StoreEntitySet="Motorista">
+          <ScalarProperty Name="Id_Motorista" ColumnName="Id_Motorista" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+          <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+          <ScalarProperty Name="Telefone1" ColumnName="Telefone1" />
+          <ScalarProperty Name="Telefone2" ColumnName="Telefone2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posto">
+      <EntityTypeMapping TypeName="Abastecimento.Models.Posto">
+        <MappingFragment StoreEntitySet="Posto">
+          <ScalarProperty Name="Id_Posto" ColumnName="Id_Posto" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoVeiculo">
+      <EntityTypeMapping TypeName="Abastecimento.Models.TipoVeiculo">
+        <MappingFragment StoreEntitySet="TipoVeiculo">
+          <ScalarProperty Name="Id_TipoVeiculo" ColumnName="Id_TipoVeiculo" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Veiculo">
+      <EntityTypeMapping TypeName="Abastecimento.Models.Veiculo">
+        <MappingFragment StoreEntitySet="Veiculo">
+          <ScalarProperty Name="Id_Veiculo" ColumnName="Id_Veiculo" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VeiculoMotorista">
+      <EntityTypeMapping TypeName="Abastecimento.Models.VeiculoMotorista">
+        <MappingFragment StoreEntitySet="VeiculoMotorista">
+          <ScalarProperty Name="Id_VeiculoMotorista" ColumnName="Id_VeiculoMotorista" />
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+          <ScalarProperty Name="Id_Veiculo" ColumnName="Id_Veiculo" />
+          <ScalarProperty Name="Id_Concessionaria" ColumnName="Id_Concessionaria" />
+          <ScalarProperty Name="Id_TipoVeiculo" ColumnName="Id_TipoVeiculo" />
+          <ScalarProperty Name="Ano" ColumnName="Ano" />
+          <ScalarProperty Name="Medidor" ColumnName="Medidor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VeiculoMotoristaMotorista">
+      <EntityTypeMapping TypeName="Abastecimento.Models.VeiculoMotoristaMotorista">
+        <MappingFragment StoreEntitySet="VeiculoMotoristaMotorista">
+          <ScalarProperty Name="Id_VeiculoMotoristaMotorista" ColumnName="Id_VeiculoMotoristaMotorista" />
+          <ScalarProperty Name="Id_VeiculoMotorista" ColumnName="Id_VeiculoMotorista" />
+          <ScalarProperty Name="Id_Motorista" ColumnName="Id_Motorista" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

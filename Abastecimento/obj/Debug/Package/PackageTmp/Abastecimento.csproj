@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D4C059AC-9136-4A89-8C0A-B30E02E18547}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Abastecimento</RootNamespace>
+    <AssemblyName>Abastecimento</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="IntuitiveFramework, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IntuitiveFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AbastecimentoPeriodoController.cs" />
+    <Compile Include="Controllers\CombustivelController.cs" />
+    <Compile Include="Controllers\ConcessionariaController.cs" />
+    <Compile Include="Controllers\AbastecimentoPostoController.cs" />
+    <Compile Include="Controllers\VeiculoMotoristaController.cs" />
+    <Compile Include="Controllers\MotoristaController.cs" />
+    <Compile Include="Controllers\VeiculoController.cs" />
+    <Compile Include="Controllers\TipoVeiculoController.cs" />
+    <Compile Include="Controllers\PostoController.cs" />
+    <Compile Include="Controllers\JsonGetsController.cs" />
+    <Compile Include="Controllers\CadastrosAbastecimentoEntityFrameworkController.cs" />
+    <Compile Include="Controllers\CadastrosAbastecimentoController.cs" />
+    <Compile Include="Controllers\EstabelecimentosController.cs" />
+    <Compile Include="Controllers\GrupoController.cs" />
+    <Compile Include="Controllers\ListAbastecimentoController.cs" />
+    <Compile Include="Controllers\TrocarSenhaController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\IsCurrentActionHelper.cs" />
+    <Compile Include="Models\Abastecimento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Abastecimento.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CombustivelModel.cs" />
+    <Compile Include="Models\ConcessionariaModel.cs" />
+    <Compile Include="Models\AbastecimentoPostoModel.cs" />
+    <Compile Include="Models\VeiculoMotoristaModel.cs" />
+    <Compile Include="Models\MotoristaModel.cs" />
+    <Compile Include="Models\VeiculoModel.cs" />
+    <Compile Include="Models\TipoVeiculoModel.cs" />
+    <Compile Include="Models\PostoModel.cs" />
+    <Compile Include="Models\UsuarioModel.cs" />
+    <Compile Include="Models\GrupoModel.cs" />
+    <Compile Include="Models\CustomStructs.cs" />
+    <Compile Include="Models\IdDescForJsonResponse.cs" />
+    <Compile Include="Models\StringHelper.cs" />
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\GlobalBusinessApplications.cs" />
+    <Compile Include="Models\Helper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelatoriosDataSet.cs">
+      <DependentUpon>RelatoriosDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RelatoriosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatoriosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\AbastecimentoPeriodo.aspx.cs">
+      <DependentUpon>AbastecimentoPeriodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\AbastecimentoPeriodo.aspx.designer.cs">
+      <DependentUpon>AbastecimentoPeriodo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\MandarParaImpressao.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Copy of Site.css" />
+    <Content Include="Content\hide.css" />
+    <Content Include="Content\Images\ButtonDelete.gif" />
+    <Content Include="Content\Images\calendario.png" />
+    <Content Include="Content\Images\cancel.gif" />
+    <Content Include="Content\Images\delete.gif" />
+    <Content Include="Content\Images\edit.gif" />
+    <Content Include="Content\Images\img01.gif" />
+    <Content Include="Content\Images\img02.jpg" />
+    <Content Include="Content\Images\img03.jpg" />
+    <Content Include="Content\Images\img04.jpg" />
+    <Content Include="Content\Images\img05.gif" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-bg_flat_55_c0402a_40x100.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-bg_flat_55_eeeeee_40x100.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-bg_glass_100_f8f8f8_1x400.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-bg_glass_35_dddddd_1x400.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-bg_glass_60_eeeeee_1x400.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-bg_inset-hard_75_999999_1x100.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-bg_inset-soft_50_c9c9c9_1x100.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-icons_3383bb_256x240.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-icons_70b2e1_256x240.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-icons_999999_256x240.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\images\ui-icons_fbc856_256x240.png" />
+    <Content Include="Content\jquery-ui-1.7.2\overcast\jquery-ui-1.7.2.custom.css" />
+    <Content Include="Content\Images\lupa.png" />
+    <Content Include="Content\Print.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Relatorios\AbastecimentoPeriodo.aspx" />
+    <Content Include="Scripts\GlobalFunctions.js" />
+    <Content Include="Scripts\CustomComponents.js" />
+    <Content Include="Scripts\jquery-1.2.6.min.js" />
+    <Content Include="Scripts\jquery-1.3.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.3.2.js" />
+    <Content Include="Scripts\jquery-1.3.2.min-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.7.2.custom.min.js" />
+    <Content Include="Scripts\jquery.meio.mask.js" />
+    <Content Include="Scripts\jquery_maskedinput-1_2_2.js" />
+    <Content Include="Scripts\roundCorners.js" />
+    <Content Include="Scripts\Site.js" />
+    <Content Include="Scripts\StrFunctions.js" />
+    <Content Include="Views\AbastecimentoPeriodo\List.aspx" />
+    <Content Include="Views\Combustivel\Create.aspx" />
+    <Content Include="Views\Combustivel\Delete.aspx" />
+    <Content Include="Views\Combustivel\Details.aspx" />
+    <Content Include="Views\Combustivel\Edit.aspx" />
+    <Content Include="Views\Combustivel\List.aspx" />
+    <Content Include="Views\Concessionaria\Create.aspx" />
+    <Content Include="Views\Concessionaria\Delete.aspx" />
+    <Content Include="Views\Concessionaria\Details.aspx" />
+    <Content Include="Views\Concessionaria\Edit.aspx" />
+    <Content Include="Views\Concessionaria\List.aspx" />
+    <Content Include="Views\AbastecimentoPosto\Create.aspx" />
+    <Content Include="Views\AbastecimentoPosto\Delete.aspx" />
+    <Content Include="Views\AbastecimentoPosto\Details.aspx" />
+    <Content Include="Views\AbastecimentoPosto\Edit.aspx" />
+    <Content Include="Views\AbastecimentoPosto\List.aspx" />
+    <Content Include="Views\VeiculoMotorista\Create.aspx" />
+    <Content Include="Views\VeiculoMotorista\Delete.aspx" />
+    <Content Include="Views\VeiculoMotorista\Details.aspx" />
+    <Content Include="Views\VeiculoMotorista\Edit.aspx" />
+    <Content Include="Views\VeiculoMotorista\List.aspx" />
+    <Content Include="Views\Motorista\Create.aspx" />
+    <Content Include="Views\Motorista\Delete.aspx" />
+    <Content Include="Views\Motorista\Details.aspx" />
+    <Content Include="Views\Motorista\Edit.aspx" />
+    <Content Include="Views\Motorista\List.aspx" />
+    <Content Include="Views\Veiculo\Create.aspx" />
+    <Content Include="Views\Veiculo\Delete.aspx" />
+    <Content Include="Views\Veiculo\Details.aspx" />
+    <Content Include="Views\Veiculo\Edit.aspx" />
+    <Content Include="Views\Veiculo\List.aspx" />
+    <Content Include="Views\TipoVeiculo\Create.aspx" />
+    <Content Include="Views\TipoVeiculo\Delete.aspx" />
+    <Content Include="Views\TipoVeiculo\Details.aspx" />
+    <Content Include="Views\TipoVeiculo\Edit.aspx" />
+    <Content Include="Views\TipoVeiculo\List.aspx" />
+    <Content Include="Views\Posto\Create.aspx" />
+    <Content Include="Views\Posto\Delete.aspx" />
+    <Content Include="Views\Posto\Details.aspx" />
+    <Content Include="Views\Posto\Edit.aspx" />
+    <Content Include="Views\Posto\List.aspx" />
+    <Content Include="Views\EmailConfigs\Edit.aspx" />
+    <Content Include="Views\Home\Controle.aspx" />
+    <Content Include="Views\Home\Relatorios.aspx" />
+    <Content Include="Views\Estabelecimentos\Create.aspx" />
+    <Content Include="Views\Estabelecimentos\Delete.aspx" />
+    <Content Include="Views\Estabelecimentos\Details.aspx" />
+    <Content Include="Views\Estabelecimentos\Edit.aspx" />
+    <Content Include="Views\Estabelecimentos\List.aspx" />
+    <Content Include="Views\Grupo\Create.aspx" />
+    <Content Include="Views\Grupo\Delete.aspx" />
+    <Content Include="Views\Grupo\Details.aspx" />
+    <Content Include="Views\Grupo\Edit.aspx" />
+    <Content Include="Views\Grupo\List.aspx" />
+    <Content Include="Views\Home\Administrativo.aspx" />
+    <Content Include="Views\Home\Cadastros.aspx" />
+    <Content Include="Views\Home\Erro.aspx" />
+    <Content Include="Views\TrocarSenha\List.aspx" />
+    <Content Include="Views\Usuario\Create.aspx" />
+    <Content Include="Views\Usuario\Delete.aspx" />
+    <Content Include="Views\Usuario\Details.aspx" />
+    <Content Include="Views\Usuario\Edit.aspx" />
+    <Content Include="Views\Usuario\List.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Base.Master" />
+    <Content Include="Views\Shared\Commom.Master" />
+    <Content Include="Views\Shared\CommomCollection.Master" />
+    <Content Include="Views\Shared\CommomList.Master" />
+    <Content Include="Views\Shared\CreateEdit.Master" />
+    <Content Include="Views\Shared\Delete.Master" />
+    <Content Include="Views\Shared\Details.Master" />
+    <Content Include="Views\Shared\EditMultiTables.Master" />
+    <Content Include="Views\Shared\List.Master" />
+    <Content Include="Views\Shared\AddEdit.Master" />
+    <Content Include="Views\Shared\Impressao.Master" />
+    <Content Include="Views\Shared\CommomWithoutList.Master" />
+    <Content Include="Views\Shared\ListWithoutCreate.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\CollectionNoSave.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditMultiTablesNoMainSave.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\Abastecimento.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Abastecimento.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="RelatoriosDataSet.xsc">
+      <DependentUpon>RelatoriosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RelatoriosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RelatoriosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RelatoriosDataSet.xss">
+      <DependentUpon>RelatoriosDataSet.xsd</DependentUpon>
+    </None>
+    <Content Include="Views\Shared\PseudoEditMultiTables.Master" />
+    <Content Include="Views\Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Relatorios\AbastecimentoPeriodo.rdlc" />
+    <EmbeddedResource Include="Relatorios\AbastecimentoPeriodoBKP.rdlc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56321</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

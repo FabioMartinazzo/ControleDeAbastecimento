@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Abastecimento.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="AbastecimentoModelsStoreContainer">
+    <EntitySet Name="AbastecimentoPosto" EntityType="Abastecimento.Models.Store.AbastecimentoPosto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Combustivel" EntityType="Abastecimento.Models.Store.Combustivel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Concessionaria" EntityType="Abastecimento.Models.Store.Concessionaria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ModeloVeiculoCombustivel" EntityType="Abastecimento.Models.Store.ModeloVeiculoCombustivel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Motorista" EntityType="Abastecimento.Models.Store.Motorista" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Posto" EntityType="Abastecimento.Models.Store.Posto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoVeiculo" EntityType="Abastecimento.Models.Store.TipoVeiculo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Veiculo" EntityType="Abastecimento.Models.Store.Veiculo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VeiculoMotorista" EntityType="Abastecimento.Models.Store.VeiculoMotorista" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VeiculoMotoristaMotorista" EntityType="Abastecimento.Models.Store.VeiculoMotoristaMotorista" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AbastecimentoPosto_Combustivel" Association="Abastecimento.Models.Store.FK_AbastecimentoPosto_Combustivel">
+      <End Role="Combustivel" EntitySet="Combustivel" />
+      <End Role="AbastecimentoPosto" EntitySet="AbastecimentoPosto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbastecimentoPosto_Motorista" Association="Abastecimento.Models.Store.FK_AbastecimentoPosto_Motorista">
+      <End Role="Motorista" EntitySet="Motorista" />
+      <End Role="AbastecimentoPosto" EntitySet="AbastecimentoPosto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbastecimentoPosto_Posto" Association="Abastecimento.Models.Store.FK_AbastecimentoPosto_Posto">
+      <End Role="Posto" EntitySet="Posto" />
+      <End Role="AbastecimentoPosto" EntitySet="AbastecimentoPosto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AbastecimentoPosto_VeiculoMotorista" Association="Abastecimento.Models.Store.FK_AbastecimentoPosto_VeiculoMotorista">
+      <End Role="VeiculoMotorista" EntitySet="VeiculoMotorista" />
+      <End Role="AbastecimentoPosto" EntitySet="AbastecimentoPosto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModeloVeiculoCombustivel_Combustivel" Association="Abastecimento.Models.Store.FK_ModeloVeiculoCombustivel_Combustivel">
+      <End Role="Combustivel" EntitySet="Combustivel" />
+      <End Role="ModeloVeiculoCombustivel" EntitySet="ModeloVeiculoCombustivel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModeloVeiculoCombustivel_VeiculoMotorista" Association="Abastecimento.Models.Store.FK_ModeloVeiculoCombustivel_VeiculoMotorista">
+      <End Role="VeiculoMotorista" EntitySet="VeiculoMotorista" />
+      <End Role="ModeloVeiculoCombustivel" EntitySet="ModeloVeiculoCombustivel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeiculoMotorista_Concessionaria" Association="Abastecimento.Models.Store.FK_VeiculoMotorista_Concessionaria">
+      <End Role="Concessionaria" EntitySet="Concessionaria" />
+      <End Role="VeiculoMotorista" EntitySet="VeiculoMotorista" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeiculoMotorista_TipoVeiculo" Association="Abastecimento.Models.Store.FK_VeiculoMotorista_TipoVeiculo">
+      <End Role="TipoVeiculo" EntitySet="TipoVeiculo" />
+      <End Role="VeiculoMotorista" EntitySet="VeiculoMotorista" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeiculoMotorista_Veiculo" Association="Abastecimento.Models.Store.FK_VeiculoMotorista_Veiculo">
+      <End Role="Veiculo" EntitySet="Veiculo" />
+      <End Role="VeiculoMotorista" EntitySet="VeiculoMotorista" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeiculoMotoristaMotorista_Motorista" Association="Abastecimento.Models.Store.FK_VeiculoMotoristaMotorista_Motorista">
+      <End Role="Motorista" EntitySet="Motorista" />
+      <End Role="VeiculoMotoristaMotorista" EntitySet="VeiculoMotoristaMotorista" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VeiculoMotoristaMotorista_VeiculoMotorista" Association="Abastecimento.Models.Store.FK_VeiculoMotoristaMotorista_VeiculoMotorista">
+      <End Role="VeiculoMotorista" EntitySet="VeiculoMotorista" />
+      <End Role="VeiculoMotoristaMotorista" EntitySet="VeiculoMotoristaMotorista" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AbastecimentoPosto">
+    <Key>
+      <PropertyRef Name="Id_AbastecimentoPosto" />
+    </Key>
+    <Property Name="Id_AbastecimentoPosto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Quantidade_Combustivel" Type="float" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Observacao" Type="varchar" MaxLength="1500" />
+    <Property Name="Id_Posto" Type="int" Nullable="false" />
+    <Property Name="Id_Combustivel" Type="int" Nullable="false" />
+    <Property Name="Id_VeiculoMotorista" Type="int" Nullable="false" />
+    <Property Name="ValorUnitario" Type="float" Nullable="false" />
+    <Property Name="Id_Motorista" Type="int" Nullable="false" />
+    <Property Name="LeituraMedidor" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Combustivel">
+    <Key>
+      <PropertyRef Name="Id_Combustivel" />
+    </Key>
+    <Property Name="Id_Combustivel" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" />
+    <Property Name="Observacao" Type="varchar" MaxLength="1500" />
+  </EntityType>
+  <EntityType Name="Concessionaria">
+    <Key>
+      <PropertyRef Name="Id_Concessionaria" />
+    </Key>
+    <Property Name="Id_Concessionaria" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" />
+    <Property Name="Observacao" Type="varchar" MaxLength="1500" />
+  </EntityType>
+  <EntityType Name="ModeloVeiculoCombustivel">
+    <Key>
+      <PropertyRef Name="Id_ModeloVeiculoCombustivel" />
+    </Key>
+    <Property Name="Id_ModeloVeiculoCombustivel" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Combustivel" Type="int" Nullable="false" />
+    <Property Name="Id_VeiculoMotorista" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Motorista">
+    <Key>
+      <PropertyRef Name="Id_Motorista" />
+    </Key>
+    <Property Name="Id_Motorista" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" />
+    <Property Name="Sobrenome" Type="varchar" MaxLength="250" />
+    <Property Name="Cpf" Type="varchar" MaxLength="15" />
+    <Property Name="Observacao" Type="varchar" MaxLength="1500" />
+    <Property Name="Telefone1" Type="varchar" MaxLength="20" />
+    <Property Name="Telefone2" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Posto">
+    <Key>
+      <PropertyRef Name="Id_Posto" />
+    </Key>
+    <Property Name="Id_Posto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" />
+    <Property Name="Observacao" Type="varchar" MaxLength="1500" />
+  </EntityType>
+  <EntityType Name="TipoVeiculo">
+    <Key>
+      <PropertyRef Name="Id_TipoVeiculo" />
+    </Key>
+    <Property Name="Id_TipoVeiculo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" />
+    <Property Name="Observacao" Type="varchar" MaxLength="1500" />
+  </EntityType>
+  <EntityType Name="Veiculo">
+    <Key>
+      <PropertyRef Name="Id_Veiculo" />
+    </Key>
+    <Property Name="Id_Veiculo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" MaxLength="50" />
+    <Property Name="Observacao" Type="varchar" MaxLength="1500" />
+  </EntityType>
+  <EntityType Name="VeiculoMotorista">
+    <Key>
+      <PropertyRef Name="Id_VeiculoMotorista" />
+    </Key>
+    <Property Name="Id_VeiculoMotorista" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Placa" Type="varchar" MaxLength="9" />
+    <Property Name="Observacao" Type="varchar" MaxLength="1500" />
+    <Property Name="Id_Veiculo" Type="int" Nullable="false" />
+    <Property Name="Id_Concessionaria" Type="int" Nullable="false" />
+    <Property Name="Id_TipoVeiculo" Type="int" Nullable="false" />
+    <Property Name="Ano" Type="int" />
+    <Property Name="Medidor" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VeiculoMotoristaMotorista">
+    <Key>
+      <PropertyRef Name="Id_VeiculoMotoristaMotorista" />
+    </Key>
+    <Property Name="Id_VeiculoMotoristaMotorista" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id_VeiculoMotorista" Type="int" Nullable="false" />
+    <Property Name="Id_Motorista" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AbastecimentoPosto_Combustivel">
+    <End Role="Combustivel" Type="Abastecimento.Models.Store.Combustivel" Multiplicity="1" />
+    <End Role="AbastecimentoPosto" Type="Abastecimento.Models.Store.AbastecimentoPosto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Combustivel">
+        <PropertyRef Name="Id_Combustivel" />
+      </Principal>
+      <Dependent Role="AbastecimentoPosto">
+        <PropertyRef Name="Id_Combustivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbastecimentoPosto_Motorista">
+    <End Role="Motorista" Type="Abastecimento.Models.Store.Motorista" Multiplicity="1" />
+    <End Role="AbastecimentoPosto" Type="Abastecimento.Models.Store.AbastecimentoPosto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Motorista">
+        <PropertyRef Name="Id_Motorista" />
+      </Principal>
+      <Dependent Role="AbastecimentoPosto">
+        <PropertyRef Name="Id_Motorista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbastecimentoPosto_Posto">
+    <End Role="Posto" Type="Abastecimento.Models.Store.Posto" Multiplicity="1" />
+    <End Role="AbastecimentoPosto" Type="Abastecimento.Models.Store.AbastecimentoPosto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posto">
+        <PropertyRef Name="Id_Posto" />
+      </Principal>
+      <Dependent Role="AbastecimentoPosto">
+        <PropertyRef Name="Id_Posto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AbastecimentoPosto_VeiculoMotorista">
+    <End Role="VeiculoMotorista" Type="Abastecimento.Models.Store.VeiculoMotorista" Multiplicity="1" />
+    <End Role="AbastecimentoPosto" Type="Abastecimento.Models.Store.AbastecimentoPosto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VeiculoMotorista">
+        <PropertyRef Name="Id_VeiculoMotorista" />
+      </Principal>
+      <Dependent Role="AbastecimentoPosto">
+        <PropertyRef Name="Id_VeiculoMotorista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModeloVeiculoCombustivel_Combustivel">
+    <End Role="Combustivel" Type="Abastecimento.Models.Store.Combustivel" Multiplicity="1" />
+    <End Role="ModeloVeiculoCombustivel" Type="Abastecimento.Models.Store.ModeloVeiculoCombustivel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Combustivel">
+        <PropertyRef Name="Id_Combustivel" />
+      </Principal>
+      <Dependent Role="ModeloVeiculoCombustivel">
+        <PropertyRef Name="Id_Combustivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModeloVeiculoCombustivel_VeiculoMotorista">
+    <End Role="VeiculoMotorista" Type="Abastecimento.Models.Store.VeiculoMotorista" Multiplicity="1" />
+    <End Role="ModeloVeiculoCombustivel" Type="Abastecimento.Models.Store.ModeloVeiculoCombustivel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VeiculoMotorista">
+        <PropertyRef Name="Id_VeiculoMotorista" />
+      </Principal>
+      <Dependent Role="ModeloVeiculoCombustivel">
+        <PropertyRef Name="Id_VeiculoMotorista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeiculoMotorista_Concessionaria">
+    <End Role="Concessionaria" Type="Abastecimento.Models.Store.Concessionaria" Multiplicity="1" />
+    <End Role="VeiculoMotorista" Type="Abastecimento.Models.Store.VeiculoMotorista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Concessionaria">
+        <PropertyRef Name="Id_Concessionaria" />
+      </Principal>
+      <Dependent Role="VeiculoMotorista">
+        <PropertyRef Name="Id_Concessionaria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeiculoMotorista_TipoVeiculo">
+    <End Role="TipoVeiculo" Type="Abastecimento.Models.Store.TipoVeiculo" Multiplicity="1" />
+    <End Role="VeiculoMotorista" Type="Abastecimento.Models.Store.VeiculoMotorista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoVeiculo">
+        <PropertyRef Name="Id_TipoVeiculo" />
+      </Principal>
+      <Dependent Role="VeiculoMotorista">
+        <PropertyRef Name="Id_TipoVeiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeiculoMotorista_Veiculo">
+    <End Role="Veiculo" Type="Abastecimento.Models.Store.Veiculo" Multiplicity="1" />
+    <End Role="VeiculoMotorista" Type="Abastecimento.Models.Store.VeiculoMotorista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veiculo">
+        <PropertyRef Name="Id_Veiculo" />
+      </Principal>
+      <Dependent Role="VeiculoMotorista">
+        <PropertyRef Name="Id_Veiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeiculoMotoristaMotorista_Motorista">
+    <End Role="Motorista" Type="Abastecimento.Models.Store.Motorista" Multiplicity="1" />
+    <End Role="VeiculoMotoristaMotorista" Type="Abastecimento.Models.Store.VeiculoMotoristaMotorista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Motorista">
+        <PropertyRef Name="Id_Motorista" />
+      </Principal>
+      <Dependent Role="VeiculoMotoristaMotorista">
+        <PropertyRef Name="Id_Motorista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VeiculoMotoristaMotorista_VeiculoMotorista">
+    <End Role="VeiculoMotorista" Type="Abastecimento.Models.Store.VeiculoMotorista" Multiplicity="1" />
+    <End Role="VeiculoMotoristaMotorista" Type="Abastecimento.Models.Store.VeiculoMotoristaMotorista" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VeiculoMotorista">
+        <PropertyRef Name="Id_VeiculoMotorista" />
+      </Principal>
+      <Dependent Role="VeiculoMotoristaMotorista">
+        <PropertyRef Name="Id_VeiculoMotorista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

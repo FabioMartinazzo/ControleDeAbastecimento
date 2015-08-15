@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" MasterPageFile="Base.Master" Inherits="System.Web.Mvc.ViewMasterPage<dynamic>" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="HeadContent" runat="server">
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="H2Title" runat="server">
+    <asp:ContentPlaceHolder ID="H2Title" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="MainTable" runat="server">    
+    <table>
+	    <tr>            
+            <th>
+                <asp:ContentPlaceHolder ID="SearchName" runat="server" />
+            </th>
+            <th>
+                <asp:ContentPlaceHolder ID="AdditionalFilters" runat="server" />
+                <%: Html.TextBox("NomePesquisa", null, new { @style = "width:500px; text-transform: uppercase;" })%>
+                <%: Html.ValidationMessage("NomePesquisa", "*")%>
+                <input type="submit" value="Pesquisar" title=" Executa a Pesquisa "/>
+            </th>
+        </tr>
+    </table>
+</asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="OtherTable" runat="server" >
+
+    <br />
+
+    <% if (Model != null) { %>
+    <b style="padding-left:1%; font-size:8pt"><%: Enumerable.Count(Model) == 1 ? string.Format("{0} Registro Encontrado", Enumerable.Count(Model)) : string.Format("{0} Registros Encontrados", Enumerable.Count(Model))%></b>
+    <% } %>
+
+        <table>
+        <tr>
+            <th class = "noprint">
+
+               <input id="buttonId" type="button" value="Criar novo" title=" Criar novo registro"/>
+               <input id="buttonImprimir" type="button" value="Imprimir" title="Imprimir"/>
+
+            </th>
+            <asp:ContentPlaceHolder ID="ColumnsTitle" runat="server" />
+        </tr>              
+        <asp:ContentPlaceHolder ID="ColumnsData" runat="server" />
+    </table>
+</asp:Content>
+
+<asp:Content ID="Content6" ContentPlaceHolderID="PageScripts" runat="server" >
+    <asp:ContentPlaceHolder ID="PageScripts" runat="server" />
+</asp:Content>

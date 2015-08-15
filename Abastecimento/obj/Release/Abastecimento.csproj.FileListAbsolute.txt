@@ -1,0 +1,6 @@
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\bin\Abastecimento.dll
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\bin\Abastecimento.pdb
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\bin\IntuitiveFramework.pdb
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\obj\Release\Abastecimento.csprojResolveAssemblyReference.cache
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\obj\Release\Abastecimento.dll
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\obj\Release\Abastecimento.pdb

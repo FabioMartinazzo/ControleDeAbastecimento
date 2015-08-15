@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" MasterPageFile="CommomList.Master" Inherits="System.Web.Mvc.ViewMasterPage<dynamic>" %>
+<%@ Import Namespace="IntuitiveFramework.Models" %>
+<%@ Import Namespace="BeautySys.Models" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="H2Title" runat="server">
+    <asp:ContentPlaceHolder ID="H2Title" runat="server" />
+</asp:Content>
+    
+<asp:Content ID="Content3" ContentPlaceHolderID="H3Title" runat="server">
+    <asp:ContentPlaceHolder ID="H3Title" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="FieldsetTop" runat="server">
+    <asp:ContentPlaceHolder ID="FieldsetTop" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="LegendTitle" runat="server">
+    <asp:ContentPlaceHolder ID="LegendTitle" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content6" ContentPlaceHolderID="MainTable" runat="server">
+    <table class="tabelaImpressao">
+        <asp:ContentPlaceHolder ID="MainTable" runat="server" />
+        <tr>
+            <th class="editor-label">
+                <%: Html.Label("Formato Relatorio") %>
+                
+            </th>
+            <th class="editor-field">
+            <%: Html.DropDownList("FormatoRelatorio", new SelectList(from Enums.FormatosRelatorio s in Enum.GetValues(typeof(Enums.FormatosRelatorio))
+                        select new
+                               {
+                                   Id = s.GetHashCode(),
+                                   Tipo = EnumHelper.GetDescription(typeof(Enums.FormatosRelatorio), s.ToString())
+                               }, "Id", "Tipo"), new { @class = "dropdownlist", @style="width:150px" })%><br />
+                <%: Html.ValidationMessage("TipoRelatorio", null, new { @class = "input-validation-error" })%>
+            </th>
+            <th colspan=2 class="editor-field" align="right">
+                <input type="submit" value="Relatório" />
+            </th>
+        </tr>
+    </table>
+</asp:Content>
+
+<asp:Content ID="Content13" ContentPlaceHolderID="AditionalTables" runat="server">    
+    <asp:ContentPlaceHolder ID="AditionalTables" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content7" ContentPlaceHolderID="Button" runat="server">
+    <asp:ContentPlaceHolder ID="Button" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content8" ContentPlaceHolderID="FieldsetBottom" runat="server">
+    <asp:ContentPlaceHolder ID="FieldsetBottom" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content10" ContentPlaceHolderID="OthersForms" runat="server">
+    <asp:ContentPlaceHolder ID="OthersForms" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content11" ContentPlaceHolderID="OtherLinks" runat="server">
+    <asp:ContentPlaceHolder ID="OtherLinks" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content12" ContentPlaceHolderID="PageScripts" runat="server">
+    <asp:ContentPlaceHolder ID="PageScripts" runat="server" />
+</asp:Content>

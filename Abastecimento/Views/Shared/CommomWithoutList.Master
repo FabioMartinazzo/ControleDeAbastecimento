@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" MasterPageFile="Base.Master" Inherits="System.Web.Mvc.ViewMasterPage<dynamic>" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="H2Title" runat="server">
+    <asp:ContentPlaceHolder ID="H2Title" runat="server" />
+</asp:Content>
+    
+<asp:Content ID="Content3" ContentPlaceHolderID="H3Title" runat="server">
+    <asp:ContentPlaceHolder ID="H3Title" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="FieldsetTop" runat="server">
+    <fieldset>
+</asp:Content>
+
+<asp:Content ID="Content5" ContentPlaceHolderID="LegendTitle" runat="server">
+    <asp:ContentPlaceHolder ID="LegendTitle" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content6" ContentPlaceHolderID="MainTable" runat="server">
+    <table class="tabelaComum">
+        <asp:ContentPlaceHolder ID="MainTable" runat="server" />
+    </table>
+</asp:Content>
+
+<asp:Content ID="Content13" ContentPlaceHolderID="AditionalTables" runat="server">    
+    <asp:ContentPlaceHolder ID="AditionalTables" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content7" ContentPlaceHolderID="Button" runat="server">
+    <asp:ContentPlaceHolder ID="Button" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content8" ContentPlaceHolderID="FieldsetBottom" runat="server">
+    </fieldset>
+</asp:Content>
+
+<asp:Content ID="Content9" ContentPlaceHolderID="OtherTables" runat="server">
+    <asp:ContentPlaceHolder ID="OtherTables" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content10" ContentPlaceHolderID="OthersForms" runat="server">
+    <asp:ContentPlaceHolder ID="OthersForms" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content11" ContentPlaceHolderID="BottomLinks" runat="server">
+    <p>
+        <asp:ContentPlaceHolder ID="OtherLinks" runat="server" />
+    </p>
+</asp:Content>
+
+<asp:Content ID="Content12" ContentPlaceHolderID="PageScripts" runat="server">
+    <asp:ContentPlaceHolder ID="PageScripts" runat="server" />
+</asp:Content>

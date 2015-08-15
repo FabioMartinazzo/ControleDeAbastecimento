@@ -1,0 +1,204 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Abastecimento.Models" %>
+<%@ Import Namespace="IntuitiveFramework.Models" %>
+<%@ Import Namespace="Helpers" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+
+Released for free under the Creative Commons Attribution 3.0 License
+
+
+Adapted by Keith Adler
+
+Name       : Compromise
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20081103
+
+-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="description" content="Description of your web page goes here." />
+    <meta name="keywords" content="Keywords for you web page go here. Each keyword or group of keyword phrases are separated by a comma. Keep this  list short and relevant to the content and title of this specific page." />
+
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/Print.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../Scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/Site.js"></script>
+    <link type="text/css" href="../../Content/jquery-ui-1.7.2/overcast/jquery-ui-1.7.2.custom.css" rel="stylesheet" />	
+    <script type="text/javascript" src="../../Scripts/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery_maskedinput-1_2_2.js"></script>
+    <script type="text/javascript" src="/Scripts/MicrosoftAjax.js"></script>
+    <script type="text/javascript" src="/Scripts/MicrosoftMvcAjax.js"></script>
+    <script type="text/javascript" src="/Scripts/MicrosoftMvcValidation.js"></script>  
+
+    <script type="text/javascript" src="<%= Url.Content("~/Scripts/jquery-1.2.6.min.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.Content("~/Scripts/CustomComponents.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.Content("~/Scripts/StrFunctions.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.Content("~/Scripts/jquery-ui-1.7.2.custom.min.js")%>"></script>
+    <script type="text/javascript" src="<%= Url.Content("~/Scripts/jquery.meio.mask.js")%>" ></script>
+    
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+
+    <link type="text/css" href="../../Content/jquery-ui-1.7.2/overcast/jquery-ui-1.7.2.custom.css"
+        rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            $('input:text').setMask();
+            $('#lnkVoltarLista').click(function () {
+                /*
+                var pageToGo = 1;
+                if (document.referrer.substr(document.referrer.length - 4, 4) != "List")
+                    pageToGo++;
+
+                window.history.go(-1 * pageToGo);
+
+                return false; */
+                document.location = "List";
+            });
+
+            $('#buttonId').click(function () {
+                document.location = "Create";
+            });
+
+            $('#buttonImprimir').click(function () {
+                printPage();
+            });
+        });
+    </script>
+</head>
+<body>
+    <% int? idEstab = (int?)Session["IdEstabelecimento"]; %>
+    <% Estabelecimentos objEstabelecimento; %>
+    <% if (idEstab == null) %>
+    <%     objEstabelecimento = null; %>
+    <% else %>
+    <%     objEstabelecimento = bdContext<ControleDeLoginEntities>.Instance.BD.
+                                          Estabelecimentos.Where(x => x.Id == idEstab.Value).
+                                          FirstOrDefault(); %>
+    <div id="headerPrint" class="print" >
+        <% if (objEstabelecimento != null) { %>
+            <img alt="Logo Superior" width="70px" height="70px" src='<%= Url.Action("getLogoTop", "Home") %>' />
+            <h3><%: objEstabelecimento.NomeFantasia %></h3>
+        <% } %>
+    </div>
+
+    <div id="header" class="noprint" >
+        <div id="logo">
+            <table style="padding-top:15px" class="tabelaComum">
+                <tr>
+                    <td style="border:none; padding: 0px 0px 0px 10px">
+                        <% if (Session["IdEstabelecimento"] != null) { %>
+                            <img alt="Logo Superior" width="70px" height="70px" src='<%= Url.Action("getLogoTop", "Home") %>' />
+                        <% } %>
+                    </td>
+                    <td style="border:none; padding: 0px 0px 0px 10px">
+                        <h3><%: (objEstabelecimento == null) ? "" : objEstabelecimento.NomeFantasia %></h3>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div align="right">
+            <%  using (Html.BeginForm("Login", "Home", FormMethod.Post, new { id = "Form" })) { %>
+            <%: Html.ValidationSummary(true)%>
+                <% if ((Session["Login"] != null) && (Session["IdEstabelecimento"] != null)) { %>
+                <table style="height:10px" align="right" class="tabelaComum" >
+                    <tr>
+                        <td style="border:none; color:Olive; padding:0px 0px 0px 0px">
+                            Bem vindo <b><%: LoginBusinessApplications.
+                                                       getUsuarioFromLoginSessions(Session["Login"].ToString(), 
+                                                                                   Session["Senha"].ToString(), 
+                                                                                   CustomFunctions.getIdSistema("ControleAbastecimento")).
+                                                                                   Nome %>
+                                      </b>
+                        </td>
+                        <td style="border:none; padding:0px 0px 0px 0px">
+                            <input type="submit" value="Log Off" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="border:none; padding:0px 0px 0px 0px">
+                            <%: Html.ActionLink("Mudar Senha", "List", "TrocarSenha", null, new { @style = "Color:Orange" })%>
+                        </td>
+                    </tr>
+                </table>            
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+
+    <% if (Session["Login"] != null) { %>
+        <div id="menu" class="noprint">
+            <ul>
+                <% if (Session["AbaAtiva"] == "Home" || Session["AbaAtiva"] == null) { %>
+                    <li class="first">
+                <% } else { %>
+                    <li>
+                <% } %>
+                    <%= Html.ActionLink("Home", "Index", "Home") %></li>
+
+                <% if (Session["AbaAtiva"] == "Cadastros") { %>
+                    <li class="first">
+                <% } else { %>
+                    <li>
+                <% } %>
+                    <%= Html.ActionLink("Cadastros", "Cadastros", "Home")%></li>
+
+                <% if (Session["AbaAtiva"] == "Controle") { %>
+                    <li class="first">
+                <% } else { %>
+                    <li>
+                <% } %>
+                    <%= Html.ActionLink("Controle", "Controle", "Home")%></li>
+
+                <% if (Session["AbaAtiva"] == "Relatorios") { %>
+                    <li class="first">
+                <% } else { %>
+                    <li>
+                <% } %>
+                    <%= Html.ActionLink("Relatorios", "Relatorios", "Home")%></li>
+
+                <% if (Session["AbaAtiva"] == "Administrativo") { %>
+                    <li class="first">
+                <% } else { %>
+                    <li>
+                <% } %>
+                    <%= Html.ActionLink("Administrativo", "Administrativo", "Home")%></li>
+            </ul>
+        </div>
+    <% } %>
+
+    <!-- end #menu -->
+    <div id="wrapper">
+        <div class="btm">
+            <div id="page">
+                <div id="content">
+                    <div class="post">
+                        <div class="entry">
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                        </div>
+                    </div>
+                </div>
+                <!-- end #content -->
+                <div style="clear: both;">&nbsp;</div>
+            </div>
+            <!-- end #page -->
+        </div>
+    </div>
+    <div id="footer">
+        <p></p>
+    </div>
+    <!-- end #footer -->
+</body>
+</html>
+
+<asp:ContentPlaceHolder ID="PageScripts" runat="server" />

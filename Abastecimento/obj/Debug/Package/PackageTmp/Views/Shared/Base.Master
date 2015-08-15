@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" MasterPageFile="Site.Master" Inherits="System.Web.Mvc.ViewMasterPage<dynamic>" %>
+<%@ Import Namespace="IntuitiveFramework.Models" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
+    <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content4" ContentPlaceHolderID="HeadContent" runat="server">
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+    <h2><asp:ContentPlaceHolder ID="H2Title" runat="server" /></h2>
+
+    <% MvcForm standardForm = null; %>
+    <% if (ViewData["MetodoEControlador"] == null) %>
+    <%     standardForm = Html.BeginForm(null, null, FormMethod.Post, new { id = "StandardForm", enctype = "multipart/form-data" }); %>
+    <% else %>
+    <%     standardForm = Html.BeginForm((ViewData["MetodoEControlador"] as string[])[0], (ViewData["MetodoEControlador"] as string[])[1], FormMethod.Post, new { id = "StandardForm", enctype = "multipart/form-data" }); %>
+
+    <% using (standardForm) {%>
+    <%: Html.ValidationSummary(true) %>
+
+    <div class="input-validation-error">
+        <%= ViewData["Erro"] %> 
+    </div>
+    <div style="color:#00CC00" >
+        <%= ViewData["Mensagem"] %>
+    </div>
+    <asp:ContentPlaceHolder ID="H3Title" runat="server" />
+
+    <div id="divPesquisaModal"></div>
+
+    <asp:ContentPlaceHolder ID="FieldsetTop" runat="server" />
+    <legend>
+        <asp:ContentPlaceHolder ID="LegendTitle" runat="server" />
+    </legend>
+    <asp:ContentPlaceHolder ID="MainTable" runat="server" />
+    <asp:ContentPlaceHolder ID="AditionalTables" runat="server" />
+    <asp:ContentPlaceHolder ID="Button" runat="server" />
+    <asp:ContentPlaceHolder ID="FieldsetBottom" runat="server" />
+    <asp:ContentPlaceHolder ID="OtherTables" runat="server" />
+    <% } %>
+
+    <asp:ContentPlaceHolder ID="OtherTable" runat="server" />
+    <asp:ContentPlaceHolder ID="OthersForms" runat="server" />
+    <asp:ContentPlaceHolder ID="BottomLinks" runat="server" />
+
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="PageScripts" runat="server">
+    <asp:ContentPlaceHolder ID="PageScripts" runat="server" />
+</asp:Content>

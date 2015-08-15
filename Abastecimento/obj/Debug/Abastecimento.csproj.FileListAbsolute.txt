@@ -1,0 +1,14 @@
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\bin\Abastecimento.dll
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\bin\Abastecimento.pdb
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\obj\Debug\Abastecimento.dll
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\obj\Debug\Abastecimento.pdb
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\obj\Debug\Abastecimento.csprojResolveAssemblyReference.cache
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\bin\IntuitiveFramework.pdb
+C:\Projetos\Abastecimento\Abastecimento\bin\Abastecimento.dll
+C:\Projetos\Abastecimento\Abastecimento\bin\Abastecimento.pdb
+C:\Projetos\Abastecimento\Abastecimento\bin\IntuitiveFramework.pdb
+C:\Projetos\Abastecimento\Abastecimento\obj\Debug\Abastecimento.csprojResolveAssemblyReference.cache
+C:\Projetos\Abastecimento\Abastecimento\obj\Debug\Abastecimento.dll
+C:\Projetos\Abastecimento\Abastecimento\obj\Debug\Abastecimento.pdb
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\obj\Debug\RdlCompile.cache
+C:\Users\Developer\Documents\Visual Studio 2010\Projects\Abastecimento\Abastecimento\obj\Debug\RdlCompile.compiled

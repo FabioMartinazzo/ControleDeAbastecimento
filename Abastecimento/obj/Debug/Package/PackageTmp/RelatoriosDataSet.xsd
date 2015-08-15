@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RelatoriosDataSet" targetNamespace="http://tempuri.org/RelatoriosDataSet.xsd" xmlns:mstns="http://tempuri.org/RelatoriosDataSet.xsd" xmlns="http://tempuri.org/RelatoriosDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=PH-DV-CST-W7L01\SQLExpress;Initial Catalog=BeautySys;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="ph-dv-cst-w7l01\sqlexpress.BeautySys.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RelatoriosDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="RelatoriosDataSet" msprop:Generator_UserDSName="RelatoriosDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AbastecimentosPeriodo" msprop:Generator_TableClassName="AbastecimentosPeriodoDataTable" msprop:Generator_TableVarName="tableAbastecimentosPeriodo" msprop:Generator_RowChangedName="AbastecimentosPeriodoRowChanged" msprop:Generator_TablePropName="AbastecimentosPeriodo" msprop:Generator_RowDeletingName="AbastecimentosPeriodoRowDeleting" msprop:Generator_RowChangingName="AbastecimentosPeriodoRowChanging" msprop:Generator_RowEvHandlerName="AbastecimentosPeriodoRowChangeEventHandler" msprop:Generator_RowDeletedName="AbastecimentosPeriodoRowDeleted" msprop:Generator_RowClassName="AbastecimentosPeriodoRow" msprop:Generator_UserTableName="AbastecimentosPeriodo" msprop:Generator_RowEvArgName="AbastecimentosPeriodoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca" type="xs:string" minOccurs="0" />
+              <xs:element name="Equipamento" msprop:Generator_ColumnVarNameInTable="columnEquipamento" msprop:Generator_ColumnPropNameInRow="Equipamento" msprop:Generator_ColumnPropNameInTable="EquipamentoColumn" msprop:Generator_UserColumnName="Equipamento" type="xs:string" minOccurs="0" />
+              <xs:element name="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_UserColumnName="Data" type="xs:string" minOccurs="0" />
+              <xs:element name="Posto" msprop:Generator_ColumnVarNameInTable="columnPosto" msprop:Generator_ColumnPropNameInRow="Posto" msprop:Generator_ColumnPropNameInTable="PostoColumn" msprop:Generator_UserColumnName="Posto" type="xs:string" minOccurs="0" />
+              <xs:element name="Leitura" msprop:Generator_ColumnVarNameInTable="columnLeitura" msprop:Generator_ColumnPropNameInRow="Leitura" msprop:Generator_ColumnPropNameInTable="LeituraColumn" msprop:Generator_UserColumnName="Leitura" type="xs:string" minOccurs="0" />
+              <xs:element name="Medidor" msprop:Generator_ColumnVarNameInTable="columnMedidor" msprop:Generator_ColumnPropNameInRow="Medidor" msprop:Generator_ColumnPropNameInTable="MedidorColumn" msprop:Generator_UserColumnName="Medidor" type="xs:string" minOccurs="0" />
+              <xs:element name="Motorista" msprop:Generator_ColumnVarNameInTable="columnMotorista" msprop:Generator_ColumnPropNameInRow="Motorista" msprop:Generator_ColumnPropNameInTable="MotoristaColumn" msprop:Generator_UserColumnName="Motorista" type="xs:string" minOccurs="0" />
+              <xs:element name="Combustivel" msprop:Generator_ColumnVarNameInTable="columnCombustivel" msprop:Generator_ColumnPropNameInRow="Combustivel" msprop:Generator_ColumnPropNameInTable="CombustivelColumn" msprop:Generator_UserColumnName="Combustivel" type="xs:string" minOccurs="0" />
+              <xs:element name="Quantidade" msprop:Generator_ColumnVarNameInTable="columnQuantidade" msprop:Generator_ColumnPropNameInRow="Quantidade" msprop:Generator_ColumnPropNameInTable="QuantidadeColumn" msprop:Generator_UserColumnName="Quantidade" type="xs:string" minOccurs="0" />
+              <xs:element name="Modelo" msprop:Generator_ColumnVarNameInTable="columnModelo" msprop:Generator_ColumnPropNameInRow="Modelo" msprop:Generator_ColumnPropNameInTable="ModeloColumn" msprop:Generator_UserColumnName="Modelo" type="xs:string" minOccurs="0" />
+              <xs:element name="IdEquipamento" msprop:Generator_ColumnVarNameInTable="columnIdEquipamento" msprop:Generator_ColumnPropNameInRow="IdEquipamento" msprop:Generator_ColumnPropNameInTable="IdEquipamentoColumn" msprop:Generator_UserColumnName="IdEquipamento" type="xs:string" minOccurs="0" />
+              <xs:element name="MedidorDiferenca" msprop:Generator_ColumnVarNameInTable="columnMedidorDiferenca" msprop:Generator_ColumnPropNameInRow="MedidorDiferenca" msprop:Generator_ColumnPropNameInTable="MedidorDiferencaColumn" msprop:Generator_UserColumnName="MedidorDiferenca" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
